@@ -156,6 +156,145 @@
             margin-bottom: 2rem;
         }
 
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h3 {
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-issuer {
+            color: #ff6b6b;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .cert-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .cert-link:hover {
+            transform: scale(1.05);
+        }
+
+        .special-card {
+            border: 2px solid #ffd700;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .special-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700, #ff6b6b);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Tech Stack Tags */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
         /* Skills Section */
         .skills-grid {
             display: grid;
@@ -289,11 +428,46 @@
             color: white;
         }
 
+        .open-to-work {
+            background: linear-gradient(45deg, #00c851, #00a085);
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+        }
+
+        .contact-item h4 {
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+        }
+
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
         .contact-link {
@@ -308,6 +482,14 @@
         .contact-link:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .resume-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        }
+
+        .resume-btn:hover {
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
         }
 
         /* Footer */
@@ -417,6 +599,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -441,8 +624,22 @@
                     Curious and driven Computer Science undergraduate with a deep passion for AI, Machine Learning, and data-driven problem solving. With hands-on experience in real-world ML projects and team leadership, I thrive in collaborative environments where innovation and impact meet.
                 </p>
                 <p>
-                    I'm eager to bring my skills, creativity, and growing expertise to organizations where I can keep learning and contribute meaningfully to AI/ML and Data Science challenges.
+                    Currently pursuing my <strong>#90DaysOfML</strong> challenge, diving deep into advanced machine learning concepts, big data analytics, and AI implementation. I'm eager to bring my skills, creativity, and growing expertise to organizations where I can keep learning and contribute meaningfully to AI/ML and Data Science challenges.
                 </p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>10,000+</h3>
+                        <p>Rural Residents Impacted</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>30+</h3>
+                        <p>Team Members Led</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>5+</h3>
+                        <p>Industry Certifications</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -506,6 +703,53 @@
         </div>
     </section>
 
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Achievements</h2>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">🤖</div>
+                    <h3>Machine Learning with Python</h3>
+                    <p class="cert-issuer">IBM</p>
+                    <a href="https://coursera.org/share/11bb9173da362ae1f7526a6fcbb5f7f2" class="cert-link">View Certificate</a>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🧠</div>
+                    <h3>Career Essentials in Generative AI</h3>
+                    <p class="cert-issuer">Microsoft & LinkedIn</p>
+                    <a href="https://www.linkedin.com/learning/certificates/6785b3228daa22061ea6efa6735c60b68fac69c05aa63c9291e40734ec141aa3" class="cert-link">View Certificate</a>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">📊</div>
+                    <h3>Version Control</h3>
+                    <p class="cert-issuer">Meta</p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/D55W6K0JX3VT" class="cert-link">View Certificate</a>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🗄️</div>
+                    <h3>Advanced MySQL Topics</h3>
+                    <p class="cert-issuer">Meta</p>
+                    <a href="https://coursera.org/share/96789ce756b3fc2aba9eb96d3436119a" class="cert-link">View Certificate</a>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">📈</div>
+                    <h3>Data Visualisation Job Simulation</h3>
+                    <p class="cert-issuer">Tata - Forage</p>
+                    <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_schkc5JqoXH5TPBgg_1738504893136_completion_certificate.pdf" class="cert-link">View Certificate</a>
+                </div>
+                <div class="cert-card special-card">
+                    <div class="cert-icon">🎯</div>
+                    <h3>#90DaysOfML Challenge</h3>
+                    <p class="cert-issuer">Currently Pursuing</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%"></div>
+                    </div>
+                    <p class="progress-text">Day 40/90 - Advanced ML Concepts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="experience">
         <div class="container">
             <h2 class="section-title">Experience</h2>
@@ -514,19 +758,37 @@
                     <h3>AI/ML Intern & Team Leader</h3>
                     <div class="company">UptoSkills</div>
                     <div class="duration">Jan 2025 - Apr 2025</div>
-                    <p>Led development of an AI proctoring system using facial recognition for HR assessments. Mentored a team of 30+ interns and ensured smooth project delivery.</p>
+                    <p>Led development of an AI proctoring system using facial recognition for HR assessments. Mentored a team of 30+ interns and ensured smooth project delivery with focus on clean code and collaboration.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Face Recognition</span>
+                        <span class="tech-tag">Team Leadership</span>
+                    </div>
                 </div>
                 <div class="experience-item">
                     <h3>Data Science Intern</h3>
                     <div class="company">MyJobGrow</div>
                     <div class="duration">Jan 2025 - Mar 2025</div>
-                    <p>Built ML models for wine quality, IPL match predictions, and price forecasting. Streamlined data pipelines using Python, Pandas, and Scikit-learn.</p>
+                    <p>Built ML models for wine quality prediction, IPL match outcome forecasting, and price prediction systems. Streamlined data pipelines and delivered actionable insights through interactive dashboards.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Data Visualization</span>
+                    </div>
                 </div>
                 <div class="experience-item">
                     <h3>Higher Education Scholar</h3>
                     <div class="company">Ullas Trust</div>
                     <div class="duration">Sep 2023 - Jun 2027</div>
-                    <p>Led initiatives promoting STEM education and digital literacy across India. Organized programs impacting 1,000+ students in Delhi NCR.</p>
+                    <p>Led initiatives promoting STEM education and digital literacy across India. Organized comprehensive programs impacting 1,000+ students in Delhi NCR, focusing on bridging the digital divide.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">STEM Education</span>
+                        <span class="tech-tag">Digital Literacy</span>
+                        <span class="tech-tag">Workshop Management</span>
+                        <span class="tech-tag">Community Impact</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -537,10 +799,26 @@
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
                 <p>Ready to collaborate on exciting AI/ML projects? Let's connect and build something amazing together!</p>
+                <p class="open-to-work">🚀 <strong>Open to Work</strong> - Available for AI/ML internships and full-time opportunities</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>📧 Email</h4>
+                        <p>jaiswalayush2121@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📱 Phone</h4>
+                        <p>+91 7827376991</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📍 Location</h4>
+                        <p>New Delhi, India</p>
+                    </div>
+                </div>
                 <div class="contact-links">
-                    <a href="mailto:jaiswalayush2121@gmail.com" class="contact-link">Email</a>
-                    <a href="https://www.linkedin.com/in/ayushjaiswal-datadriven" class="contact-link">LinkedIn</a>
-                    <a href="https://github.com/ayushjaiswal21" class="contact-link">GitHub</a>
+                    <a href="mailto:jaiswalayush2121@gmail.com" class="contact-link">📧 Email</a>
+                    <a href="https://www.linkedin.com/in/ayushjaiswal-datadriven" class="contact-link">💼 LinkedIn</a>
+                    <a href="https://github.com/ayushjaiswal21" class="contact-link">💻 GitHub</a>
+                    <a href="https://shorturl.at/l4f2Q" class="contact-link resume-btn">📄 Resume</a>
                 </div>
             </div>
         </div>
