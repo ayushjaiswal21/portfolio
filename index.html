@@ -18,6 +18,8 @@
             overflow-x: hidden;
             font-size: 17px;
             line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .container {
@@ -82,6 +84,11 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease, transform 0.2s ease;
+            padding: 8px 12px;
+            border-radius: 8px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
         }
 
         .nav-links a:hover {
@@ -103,7 +110,7 @@
         }
 
         .hero-content h1 {
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 8vw, 4rem);
             margin-bottom: 1.2rem;
             opacity: 0;
             animation: fadeInUp 1s ease 0.5s forwards;
@@ -111,7 +118,7 @@
         }
 
         .hero-content p {
-            font-size: 1.7rem;
+            font-size: clamp(1.2rem, 4vw, 1.7rem);
             margin-bottom: 2.5rem;
             opacity: 0;
             animation: fadeInUp 1s ease 0.7s forwards;
@@ -124,13 +131,15 @@
             padding: 18px 35px;
             border: none;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             font-weight: bold;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             opacity: 0;
             animation: fadeInUp 1s ease 0.9s forwards;
             box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+            min-height: 44px;
+            touch-action: manipulation;
         }
 
         .cta-button:hover {
@@ -155,7 +164,7 @@
 
         .section-title {
             text-align: center;
-            font-size: 3rem;
+            font-size: clamp(2rem, 6vw, 3rem);
             margin-bottom: 3.5rem;
             color: white;
             position: relative;
@@ -220,14 +229,42 @@
             .profile-section {
                 flex-direction: column;
                 text-align: center;
+                gap: 2rem;
             }
             .profile-text {
                 text-align: center;
             }
+            .profile-image {
+                width: 180px;
+                height: 180px;
+            }
+            .hero {
+                padding: 120px 20px 60px;
+                min-height: 80vh;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .nav-links a {
+                font-size: 0.9rem;
+                padding: 10px 8px;
+            }
+            section {
+                padding: 60px 0;
+            }
+            .container {
+                padding: 0 20px;
+            }
+            .about-content,
+            .skill-category,
+            .cert-card,
+            .project-card {
+                padding: 2rem 1.5rem;
+            }
         }
 
         .about-content p {
-            font-size: 1.4rem;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
             line-height: 1.9;
             margin-bottom: 2.2rem;
             color: #C0C0C0;
@@ -315,6 +352,10 @@
             font-weight: 600;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            touch-action: manipulation;
         }
 
         .cert-link:hover {
@@ -1717,7 +1758,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Ayush Jaiswal. All rights reserved. | Optimized for Professional Review</p>
+            <p>&copy; 2025 Ayush Jaiswal. All rights reserved.</p>
         </div>
     </footer>
 
