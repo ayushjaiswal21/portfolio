@@ -469,7 +469,6 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
             gap: 3rem;
             margin-top: 3rem;
         }
@@ -1227,9 +1226,6 @@
         
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
             
             .hero-content h1 {
                 font-size: 2.8rem;
