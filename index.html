@@ -1,551 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayush Jaiswal - AI/ML & Data Science Specialist</title>
-    <meta name="description" content="Portfolio of Ayush Jaiswal — AI/ML Engineer & Data Scientist. Projects, skills, hackathon wins, certifications, and experience in deploying impactful machine learning solutions.">
-    <link rel="icon" href="images/profile/profile.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayush Jaiswal — AI Engineer, Cognitive Intelligence &amp; Voice AI</title>
+  <meta name="description" content="Ayush Jaiswal — AI Engineer specializing in cognitive intelligence R&D and real-time voice AI. TTS/STT pipelines, LLM fine-tuning, and applied data science.">
+  <link rel="icon" href="images/profile/profile.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="scroll-indicator">
-        <div class="scroll-progress"></div>
-    </div>
-    
-    <div class="section-counter">
-        <div class="section-dot" data-section="home"></div>
-        <div class="section-dot" data-section="about"></div>
-        <div class="section-dot" data-section="skills"></div>
-        <div class="section-dot" data-section="projects"></div>
-        <div class="section-dot" data-section="hackathons"></div>
-        <div class="section-dot" data-section="volunteer"></div>
-        <div class="section-dot" data-section="events"></div>
-        <div class="section-dot" data-section="certifications"></div>
-        <div class="section-dot" data-section="experience"></div>
-        <div class="section-dot" data-section="contact"></div>
-    </div>
-    
-    <div class="floating-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
 
-    <header>
-        <nav class="container">
-            <div class="logo">
-                <img src="images/profile/profile.jpg" alt="Ayush Jaiswal" class="logo-image">
-                <span>Ayush Jaiswal</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#hackathons">Hackathons</a></li>
-                <li><a href="#volunteer">Volunteer</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="site-nav">
+    <div class="container">
+      <a href="#home" class="brand">
+        <span class="brand-mark">AJ</span>
+        <span>Ayush Jaiswal</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="hero-glow" id="heroGlow"></div>
+    <div class="container">
+      <div class="hero-text">
+        <div class="hero-eyebrow"><span class="dot"></span> Open to AI Engineer &amp; Voice AI roles</div>
+        <h1>Teaching machines to listen, reason, and reply in real time.</h1>
+        <p class="lede">
+          I'm an AI engineer working across cognitive intelligence R&amp;D and voice AI —
+          fine-tuning language models and architecting the TTS/STT pipelines that
+          sit underneath a conversation that feels instant.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View my work</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric">
+            <div class="num" data-count-to="25" data-suffix="%">0%</div>
+            <div class="label">Faster voice-agent responses</div>
+          </div>
+          <div class="metric">
+            <div class="num" data-count-to="40" data-suffix="%">0%</div>
+            <div class="label">Lower interaction latency</div>
+          </div>
+          <div class="metric">
+            <div class="num" data-count-to="99.9" data-suffix="%" data-decimals="1">0%</div>
+            <div class="label">Execution uptime</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <span class="visual-tag"><span class="live" id="waveformDot">●</span> <span id="waveformLabel">voice agent / waveform</span></span>
+        <button class="mic-toggle" id="micToggle" type="button" aria-pressed="false">
+          <span class="mic-dot"></span> Try live voice
+        </button>
+        <canvas id="waveform"></canvas>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-photo-wrap">
+        <img src="images/profile/profile.jpg" alt="Ayush Jaiswal" class="about-photo">
+      </div>
+      <div class="about-copy">
+        <div class="section-head" style="margin-bottom: 1.6rem;">
+          <h2>About</h2>
+        </div>
+        <p>
+          I'm an <strong>AI engineer</strong> focused on cognitive intelligence
+          research and real-time voice AI. Most of my time goes into
+          <strong>fine-tuning language and speech models</strong>, building
+          the TTS/STT pipelines they run on, and writing the guardrails that
+          keep them reliable once they're live.
+        </p>
+        <p>
+          I'm currently deep in <strong>LLMs and SLMs</strong> — reading,
+          building, and finding where the theory breaks on real audio. I'm a
+          4th-year B.Tech student in Computer Science (AI &amp; ML), splitting
+          time between coursework and shipping production systems.
+        </p>
+        <div class="about-focus">
+          <div class="focus-row">
+            <div class="k">Right now</div>
+            <div class="v">AI Agent Architect Intern, AD and AR Technologies</div>
+          </div>
+          <div class="focus-row">
+            <div class="k">Based in</div>
+            <div class="v">Noida, Uttar Pradesh, India</div>
+          </div>
+          <div class="focus-row">
+            <div class="k">Looking for</div>
+            <div class="v">Full-time AI Engineer / Voice AI roles</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <h2>Experience</h2>
+        <p>Three roles, each one going deeper into cognitive and voice systems.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="when">Jun 2026 —<br>Present</div>
+          <div>
+            <h3>AI Agent Architect Intern</h3>
+            <div class="org">AD and AR Technologies · Noida, UP</div>
+            <ul>
+              <li>Spearheading cognitive intelligence R&amp;D by fine-tuning 3+ cognitive models, improving real-time voice AI agent responsiveness by 25%.</li>
+              <li>Architected and deployed end-to-end TTS and STT pipelines, integrating Voice Activity Detection (VAD) to reduce interaction latency by 40%.</li>
+              <li>Designed guardrails and fallback mechanisms with comprehensive testing protocols, cutting execution errors by 30% and holding 99.9% uptime.</li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Driven AI/ML & Data Science Engineer</h1>
-            <p>Leveraging Data and Machine Learning to Solve Complex Business Challenges</p>
-            <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView()">
-                Innovate with Me
-            </button>
+          </div>
         </div>
-    </section>
-
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me: Driving Impact with Data Intelligence</h2>
-            <div class="about-content">
-                <div class="profile-section">
-                    <img src="images/profile/profile.jpg" alt="Ayush Jaiswal" class="profile-image">
-                    <div class="profile-text">
-                        <p>
-                            I’m an AI/ML Engineer and Data Scientist focused on turning real-world data into measurable business impact. I design and ship reliable ML systems end-to-end — from data to deployment — with a bias for clarity, speed, and maintainability.
-                        </p>
-                        <p>
-                            Recently, I’ve been deepening skills in advanced DL and MLOps through the #90DaysOfML challenge, while leading and collaborating on projects that improve user experience and operational efficiency. I’m actively exploring full‑time roles where I can deliver outcomes fast and raise the bar for the team.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="quick-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">10,000+</div>
-                        <div class="stat-label">Rural Lives Transformed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">30+</div>
-                        <div class="stat-label">AI/ML Interns Mentored</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Industry-Recognized Certifications</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">4+</div>
-                        <div class="stat-label">Hackathons Participated</div>
-                    </div>
-                </div>
-                <div class="leadership-badge">🚀 Proven Leader: Driving Innovation & Mentoring High-Performing AI/ML Teams</div>
-            </div>
+        <div class="timeline-item">
+          <div class="when">Sep 2025 —<br>Dec 2025</div>
+          <div>
+            <h3>AI Engineer Intern</h3>
+            <div class="org">Roamverse Solution · Remote</div>
+            <ul>
+              <li>Engineered an AI course-generation system and a multilingual chatbot using Transformers, supporting 10+ languages.</li>
+              <li>Built a recommendation system that improved user engagement by 30% through optimized data preprocessing.</li>
+            </ul>
+          </div>
         </div>
-    </section>
-
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Core AI/ML & Data Science Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Languages & Libraries</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python (Expert)</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">R (Basic)</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Machine Learning & Deep Learning</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Keras</span>
-                        <span class="skill-tag">NLTK / SpaCy (NLP)</span>
-                        <span class="skill-tag">OpenCV (Computer Vision)</span>
-                        <span class="skill-tag">LLMs (Large Language Models)</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Data Analysis & Visualization</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Seaborn</span>
-                        <span class="skill-tag">Plotly</span>
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Tableau (Basic)</span>
-                        <span class="skill-tag">Big Data Concepts</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Deployment & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git & GitHub</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">SQLAlchemy</span>
-                        <span class="skill-tag">Docker (Basic)</span>
-                        <span class="skill-tag">Render</span>
-                        <span class="skill-tag">Heroku</span>
-                    </div>
-                </div>
-            </div>
+        <div class="timeline-item">
+          <div class="when">Jan 2025 —<br>Apr 2025</div>
+          <div>
+            <h3>AI/ML Team Leader</h3>
+            <div class="org">UptoSkills · Remote</div>
+            <ul>
+              <li>Spearheaded an AI proctoring system using OpenCV, reaching 95% precision in real-time facial recognition.</li>
+              <li>Directed 30+ interns in an agile environment, delivering technical modules 15% ahead of schedule.</li>
+            </ul>
+          </div>
         </div>
-    </section>
+      </div>
+      <p class="edu-note">
+        <strong>B.Tech, Computer Science (AI &amp; ML)</strong> — Haridwar University, 2023–2027 (4th year).
+      </p>
+    </div>
+  </section>
 
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">High-Impact AI/ML & Data Science Solutions</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>🧠 MindFull Horizon - Dynamic Mental Health Assessment System</h3>
-                    <p>A comprehensive Flask-based web application implementing the <strong>Mindful Horizon Framework</strong> for dynamic psychological health assessment of college students. This system provides real-time monitoring, AI-powered analysis, and gamified engagement through separate dashboards for patients and healthcare providers.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">AI-Chatbot</span>
-                        <span class="tech-tag">Sentiment Analysis</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Data Visualization</span>
-                        <span class="tech-tag">Render Deployment</span>
-                    </div>
-                    <a href="https://mindfullhorizon.onrender.com" class="project-link" target="_blank">🌐 Live Application</a>
-                </div>
-                <div class="project-card">
-                    <h3>🔍 Feedback Analysis Application (Google Gemini AI)</h3>
-                    <p>Developed a powerful Flask web application leveraging <strong>Google's Gemini AI</strong> for intelligent feedback analysis. This tool transforms raw feedback data into actionable insights through <strong>advanced sentiment analysis</strong>, <strong>theme extraction</strong>, and <strong>interactive visualizations</strong>. Achieved an estimated <strong>90% accuracy</strong> in sentiment classification and provided <strong>clear, actionable insights</strong> for data-driven decision-making, improving customer satisfaction metrics.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">Google Gemini AI</span>
-                        <span class="tech-tag">Sentiment Analysis</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Data Visualization</span>
-                        <span class="tech-tag">Render Deployment</span>
-                    </div>
-                    <a href="https://future-ds-03.onrender.com" class="project-link" target="_blank">🌐 Live Application</a>
-                </div>
-                <div class="project-card">
-                    <h3>SarthiHub - Rural Service Platform (AI-Integrated)</h3>
-                    <p>Designed and deployed a <strong>digital platform</strong> leveraging data analytics to <strong>improve access to essential services for over 10,000 rural residents</strong> across 15 communities. Enabled data-driven resource allocation, <strong>reducing service delivery time by 25%</strong>. Additionally, spearheaded digital literacy and skills training for 500+ individuals, driving tangible social impact.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Web Development</span>
-                        <span class="tech-tag">Data Analytics</span>
-                        <span class="tech-tag">Impact Measurement</span>
-                    </div>
-                    <a href="https://github.com/ayushjaiswal21/Rural_Services" class="project-link">View Project (GitHub)</a>
-                </div>
-                <div class="project-card">
-                    <h3>Health&amp;Care - AI-Driven Healthcare Optimization</h3>
-                    <p>Designed and implemented <strong>advanced queuing models (e.g., Markov Chains, Simulation)</strong> for healthcare OPDs, successfully <strong>reducing patient wait times by an average of 30%</strong> (from 45 mins to 30 mins) and <strong>improving bed admission efficiency by 20%</strong>. Integrated predictive analytics for optimized medicine dispensation and <strong>reduced inventory holding costs by 15%</strong> through demand forecasting.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Simulation</span>
-                        <span class="tech-tag">Operations Research</span>
-                        <span class="tech-tag">Predictive Analytics</span>
-                    </div>
-                    <a href="https://github.com/ayushjaiswal21/Queuing-models-in-OPDs-availability-of-beds-admission-of-patients.-" class="project-link">View Project (GitHub)</a>
-                </div>
-                <div class="project-card">
-                    <h3>AssessAI - Intelligent Assessment Platform</h3>
-                    <p>Engineered an <strong>AI-powered platform</strong> for automated test creation using NLP, face recognition for secure proctoring (reducing cheating instances by <strong>estimated 60%</strong>), and real-time monitoring. This solution <strong>cut administrative workload by 40%</strong> and <strong>improved evaluation accuracy by 30%</strong>, demonstrating direct efficiency gains for educational institutions.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Facial Recognition</span>
-                    </div>
-                    <a href="https://github.com/ayushjaiswal21/flask-dashbord" class="project-link">View Project (GitHub)</a>
-                </div>
-                <div class="project-card">
-                    <h3>E-commerce Sales & Marketing Dashboard (Power BI/Python)</h3>
-                    <p>Developed a comprehensive <strong>e-commerce analytics dashboard</strong> using Python (Pandas, Plotly) and integrated with Power BI for interactive visualizations. Analyzed complex sales trends, identified best-selling products by category, and unearthed key revenue patterns. Provided <strong>actionable business insights that informed marketing strategies, leading to a projected 8% increase in Q3 sales</strong>.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">Plotly</span>
-                        <span class="tech-tag">Power BI</span>
-                        <span class="tech-tag">Business Intelligence</span>
-                    </div>
-                    <a href="https://github.com/ayushjaiswal21/Future_DS_01" class="project-link">View Project (GitHub)</a>
-                </div>
-                <div class="project-card">
-                    <h3>Wine Quality Predictive System (ML Classification)</h3>
-                    <p>Built and optimized <strong>Machine Learning classification models</strong> (Random Forest, SVM, Gradient Boosting) to predict wine quality based on physico-chemical properties. Achieved a <strong>prediction accuracy of 85%</strong> on unseen data, providing a robust tool for quality control and new product development in the wine industry. Conducted comprehensive feature engineering and model hyperparameter tuning.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">Random Forest</span>
-                        <span class="tech-tag">SVM</span>
-                        <span class="tech-tag">Model Evaluation</span>
-                    </div>
-                    <a href="https://github.com/ayushjaiswal21/wine_quality_app" class="project-link">View Project (GitHub)</a>
-                </div>
-                <div class="project-card">
-                    <h3>Real-time Sentiment Analysis Web Application (Deep Learning)</h3>
-                    <p>Developed a comprehensive <strong>deep learning web application</strong> for real-time sentiment analysis of text data utilizing an <strong>RNN (Recurrent Neural Network) architecture with LSTM layers</strong>. Trained on a 1.6M tweet dataset (Sentiment140) and achieved <strong>88% sentiment classification accuracy</strong>. Features include robust text preprocessing, advanced tokenization, intuitive Bootstrap UI, and real-time confidence scoring through API endpoints. Designed for scalability and responsive user experience.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">TensorFlow/Keras</span>
-                        <span class="tech-tag">RNN/LSTM</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">Web Development</span>
-                        <span class="tech-tag">Render Deployment</span>
-                    </div>
-                    <a href="https://sentiment-analysis-are1.onrender.com" class="project-link" target="_blank">🌐 Live Application</a>
-                </div>
-            </div>
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <p>Systems I built end-to-end, from model to deployment.</p>
+      </div>
+
+      <div class="project-row">
+        <div>
+          <h3>MindFull Horizon</h3>
+          <p style="color:var(--ink-muted); margin-bottom: 0.8rem; font-size: 0.95rem;">Dynamic digital wellness platform</p>
+          <ul>
+            <li>Architected a Flask + FastAPI platform integrating the Google Gemini API for automated clinical notes and real-time monitoring.</li>
+            <li>Deployed on Render with interactive data visualizations of patient engagement metrics.</li>
+          </ul>
+          <div class="tech-tags">
+            <span>Flask</span><span>FastAPI</span><span>Google Gemini API</span><span>Render</span>
+          </div>
         </div>
-    </section>
+        <a href="https://github.com/ayushjaiswal21/MindFullHorizon" target="_blank" class="project-link">View code →</a>
+      </div>
 
-    <section id="hackathons">
-        <div class="container">
-            <h2 class="section-title">Competitive AI/ML Achievements & Innovation</h2>
-            <div class="hackathons-grid">
-                <div class="hackathon-card enhanced-card">
-                    <img src="images/hackathons/teachsangram.jpg" alt="TeachSangram Hackathon" class="hackathon-image">
-                    <h3>TeachSangram Hackathon - Haridwar University</h3>
-                    <span class="hackathon-result winner-badge">🏆 Winner (1st Place)</span>
-                    <p>Led a 3-person team to develop <strong>AssessAI</strong> - an innovative <strong>AI-powered assessment platform</strong> that revolutionizes educational evaluation. Our solution integrated <strong>automated test creation (NLP-driven), advanced face recognition for proctoring, and real-time monitoring</strong>. Achieved <strong>significant improvements in assessment efficiency (reduced manual grading by 40%)</strong> and <strong>enhanced exam integrity</strong>. This victory underscored my passion for AI-driven education solutions and my capability to lead technical projects under pressure.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">AI Assessment</span>
-                        <span class="tech-tag">AI Quiz Generation (NLP)</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">Computer Vision</span>
-                        <span class="tech-tag">Team Leadership</span>
-                        <span class="tech-tag">Agile Development</span>
-                    </div>
-                    <div class="card-overlay">
-                        <h4>🎯 Leadership & Rapid Prototyping Excellence</h4>
-                        <p>Managed a cross-functional team of 2 developers, implemented agile methodologies (Scrum), and successfully delivered a Minimum Viable Product (MVP) within a 24-hour timeframe, securing 1st place.</p>
-                    </div>
-                </div>
-                <div class="hackathon-card">
-                    <img src="images/hackathons/techwizard.jpg" alt="TechWizard Competition" class="hackathon-image">
-                    <h3>TechWizard Competition (Inter-College)</h3>
-                    <span class="hackathon-result winner-badge">🏆 Winner (1st Place)</span>
-                    <p>Developed <strong>SarthiHUB</strong> - a comprehensive <strong>digital platform with integrated data analytics</strong> designed to empower rural communities by providing easy, data-driven access to essential services and facilities (e.g., healthcare, education, financial aid). Our solution successfully <strong>bridged the digital divide for over 5,000 individuals</strong>, leading to <strong>measurable improvements in service utilization rates by 30%</strong>. This victory reinforced my commitment to using technology for meaningful social impact.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Full Stack Development</span>
-                        <span class="tech-tag">Database Design (SQL)</span>
-                        <span class="tech-tag">API Integration</span>
-                        <span class="tech-tag">Social Impact Tech</span>
-                        <span class="tech-tag">User Experience (UX)</span>
-                    </div>
-                </div>
-                <div class="hackathon-card">
-                    <img src="images/hackathons/utkarsh.jpg" alt="Utkarsh Innovation Challenge" class="hackathon-image">
-                    <h3>Utkarsh Innovation Challenge - UTU State-Level Hackathon</h3>
-                    <span class="hackathon-result">🎯 Finalist & Key Contributor</span>
-                    <p>Showcased <strong>EDUX</strong> - an <strong>AI-powered assessment model</strong> rooted in cognitive science, designed to help students study smarter through personalized feedback, an interactive chatbot, and a powerful performance dashboard. Despite not winning, the experience provided invaluable insights into <strong>AI model explainability (XAI)</strong> and <strong>human-computer interaction (HCI)</strong>, significantly improving my problem-solving skills and expanding my professional network. Every challenge is a stepping stone - this experience fueled my passion to keep building and learning!</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">AI Assessment</span>
-                        <span class="tech-tag">Cognitive Science</span>
-                        <span class="tech-tag">Interactive Chatbot (NLP)</span>
-                        <span class="tech-tag">Dashboard Development</span>
-                        <span class="tech-tag">User Interface (UI)</span>
-                    </div>
-                </div>
-            </div>
+      <div class="project-row">
+        <div>
+          <h3>AssessAI</h3>
+          <p style="color:var(--ink-muted); margin-bottom: 0.8rem; font-size: 0.95rem;">AI-generated classroom portal</p>
+          <ul>
+            <li>Built a privacy-friendly assessment platform using Ollama (local LLM) for dynamic, AI-powered quiz generation.</li>
+            <li>Built an auto-grading system with SQLAlchemy, cutting administrative workload by 40% for classroom management.</li>
+          </ul>
+          <div class="tech-tags">
+            <span>Ollama</span><span>Flask</span><span>SQLAlchemy</span><span>NLP</span>
+          </div>
         </div>
-    </section>
+        <a href="https://github.com/ayushjaiswal21/flask-dashbord" target="_blank" class="project-link">View code →</a>
+      </div>
 
-    <section id="volunteer">
-        <div class="container">
-            <h2 class="section-title">Community Impact & Leadership</h2>
-            <div class="volunteer-grid">
-                <div class="volunteer-card">
-                    <img src="images/volunteer/intellect office.jpg" alt="Ullas Trust Higher Education Scholar" class="volunteer-image">
-                    <h3>Higher Education Scholar & Mentor - Ullas Trust</h3>
-                    <span class="impact-badge">🎓 Scholarship Recipient & Lead Mentor</span>
-                    <p>Awarded a prestigious scholarship from Ullas Trust (Polaris Foundation Social Initiative, est. 1997) for sustained academic excellence. As a lead scholar, I designed and conducted impactful educational sessions for over <strong>500+ students across Delhi NCR</strong>, focusing on critical life skills such as <strong>time management, strategic goal-setting, and holistic development</strong>. This role reinforced my passion for tech-enabled education and community empowerment through structured guidance.</p>
-                    <p class="achievements-highlight">Direct Impact: Mentored 500+ students; Improved academic planning for 75% participants.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Educational Leadership</span>
-                        <span class="tech-tag">Curriculum Design</span>
-                        <span class="tech-tag">Student Mentoring</span>
-                        <span class="tech-tag">Program Coordination</span>
-                    </div>
-                </div>
-                <div class="volunteer-card">
-                    <img src="images/volunteer/can do workshop.jpg" alt="Can Do Workshop" class="volunteer-image">
-                    <h3>Activities Coordinator - Ullas Trust (Core Team)</h3>
-                    <span class="impact-badge">Program Management & Outreach Lead</span>
-                    <p>Successfully organized and executed comprehensive educational programs, including large-scale selection exams, annual workshops, and SUMMIT programs, benefiting <strong>over 1000+ students across Delhi NCR</strong>. Managed robust student and school records databases, and <strong>recruited/engaged 150+ volunteers</strong> through effective communication and management systems. Coordinated with 50+ schools to ensure seamless program implementation, significantly expanding the trust's reach and impact. This experience deepened my commitment to making quality education accessible to all through efficient program management and robust stakeholder engagement.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Program Management</span>
-                        <span class="tech-tag">Database Management (Excel/SQL)</span>
-                        <span class="tech-tag">Volunteer Coordination</span>
-                        <span class="tech-tag">Stakeholder Engagement</span>
-                        <span class="tech-tag">Educational Outreach</span>
-                    </div>
-                </div>
-            </div>
+      <div class="project-row">
+        <div>
+          <h3>SarthiHub</h3>
+          <p style="color:var(--ink-muted); margin-bottom: 0.8rem; font-size: 0.95rem;">Rural digital service platform</p>
+          <ul>
+            <li>Scaled a service portal for 10,000+ residents, integrating healthcare and agriculture APIs to increase accessibility by 60%.</li>
+            <li>Deployed a Gunicorn/Flask stack on Render, extending digital-literacy resources with responsive design.</li>
+          </ul>
+          <div class="tech-tags">
+            <span>Flask</span><span>Gunicorn</span><span>Render</span><span>API Integration</span>
+          </div>
         </div>
-    </section>
+        <a href="https://github.com/ayushjaiswal21/Rural_Services" target="_blank" class="project-link">View code →</a>
+      </div>
+    </div>
+  </section>
 
-    <section id="events">
-        <div class="container">
-            <h2 class="section-title">Continuous Learning & Industry Engagement</h2>
-            <div class="events-grid">
-                <div class="event-card">
-                    <img src="images/events/gssoc.png" alt="GSSOC" class="event-image">
-                    <h3>GirlScript Summer of Code (GSSOC)</h3>
-                    <span class="event-type">Open Source Contributor</span>
-                    <p>Selected as a contributor for GirlScript Summer of Code, a 3-month long open-source program. I'm contributing to various projects, enhancing my skills in software development, and collaborating with a global community of developers. This experience has been invaluable in learning about open-source contribution, version control, and teamwork.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Open Source</span>
-                        <span class="tech-tag">Git & GitHub</span>
-                        <span class="tech-tag">Collaboration</span>
-                        <span class="tech-tag">Software Development</span>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <img src="images/events/WhatsApp Image 2025-07-09 at 12.44.12_e4681d4f.jpg" alt="COMET Workshop" class="event-image">
-                    <h3>COMET-2025: Advanced AI/ML Workshops (IIT Roorkee)</h3>
-                    <span class="event-type">Technical Workshop & Networking</span>
-                    <p>Participated in intensive workshops on <strong>cutting-edge AI/ML technologies, including Generative AI, MLOps, and scalable ML systems</strong>. Gained invaluable hands-on experience with industry-standard tools and frameworks (e.g., TensorFlow Extended, Kubeflow concepts). Engaged directly with leading researchers and practitioners, <strong>expanding my understanding of industry best practices and emerging trends</strong>. This workshop solidified my determination to stay at the forefront of AI/ML innovation and its practical applications.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Advanced ML</span>
-                        <span class="tech-tag">Generative AI</span>
-                        <span class="tech-tag">MLOps Concepts</span>
-                        <span class="tech-tag">Industry Best Practices</span>
-                        <span class="tech-tag">Networking</span>
-                    </div>
-                </div>
-            </div>
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <p>What I reach for, grouped by the kind of problem it solves.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="k">Languages</div>
+          <div class="skill-chips">
+            <span>Python (Expert)</span><span>SQL</span><span>Java</span>
+          </div>
         </div>
-    </section>
-
-    <section id="certifications">
-        <div class="container">
-            <h2 class="section-title">Validated AI/ML & Data Science Expertise</h2>
-            <div class="certifications-grid">
-                <div class="cert-card">
-                    <div class="cert-icon">🤖</div>
-                    <h3>Machine Learning with Python</h3>
-                    <p class="cert-issuer">IBM (via Coursera)</p>
-                    <a href="https://coursera.org/share/11bb9173da362ae1f7526a6fcbb5f7f2" class="cert-link">View Certificate</a>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-icon">🧠</div>
-                    <h3>Career Essentials in Generative AI</h3>
-                    <p class="cert-issuer">Microsoft & LinkedIn Learning</p>
-                    <a href="https://www.linkedin.com/learning/certificates/6785b3228daa22061ea6efa6735c60b68fac69c05aa63c9291e40734ec141aa3" class="cert-link">View Certificate</a>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-icon">📊</div>
-                    <h3>Version Control (Git & GitHub)</h3>
-                    <p class="cert-issuer">Meta (via Coursera)</p>
-                    <a href="https://www.coursera.org/account/accomplishments/verify/D55W6K0JX3VT" class="cert-link">View Certificate</a>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-icon">🗄️</div>
-                    <h3>Advanced MySQL for Data Professionals</h3>
-                    <p class="cert-issuer">Meta (via Coursera)</p>
-                    <a href="https://coursera.org/share/96789ce756b3fc2aba9eb96d3436119a" class="cert-link">View Certificate</a>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-icon">📈</div>
-                    <h3>Data Visualisation Job Simulation</h3>
-                    <p class="cert-issuer">Tata (via Forage)</p>
-                    <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_schkc5JqoXH5TPBgg_1738504893136_completion_certificate.pdf" class="cert-link">View Certificate</a>
-                </div>
-                <div class="cert-card special-card">
-                    <div class="cert-icon">🎯</div>
-                    <h3>#90DaysOfML Challenge (Applied ML Journey)</h3>
-                    <p class="cert-issuer">Self-Directed Learning Initiative</p>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 100%"></div>
-                    </div>
-                    <p class="progress-text">Day 90/90 - Challenge Complete!</p>
-                    <p class="progress-text">Key Modules: Generative AI (LLMs, Diffusion Models), MLOps, Cloud Deployment Strategies.</p>
-                </div>
-            </div>
+        <div class="skill-group">
+          <div class="k">AI/ML &amp; Data Science</div>
+          <div class="skill-chips">
+            <span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span><span>NLP</span><span>Computer Vision</span><span>Data Analytics</span>
+          </div>
         </div>
-    </section>
-
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Professional AI/ML & Data Science Experience</h2>
-            <div class="experience-timeline">
-                <div class="experience-item">
-                    <h3>Data Science & Analytics Intern</h3>
-                    <div class="company">Future Interns</div>
-                    <div class="duration">Dec 2024 - Jan 2025 (2 Months)</div>
-                    <p>Designed and developed a comprehensive <strong>Business Sales Dashboard</strong> by analyzing large-scale e-commerce datasets using Python (Pandas) and creating interactive visualizations with Plotly. This dashboard provided <strong>actionable business insights into sales trends, best-selling products, and revenue streams</strong>, directly supporting strategic decision-making and <strong>identifying opportunities for a projected 8% revenue growth in Q3</strong>. Presented findings to senior management, demonstrating strong analytical and communication skills.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">Plotly</span>
-                        <span class="tech-tag">Data Visualization</span>
-                        <span class="tech-tag">Business Intelligence</span>
-                        <span class="tech-tag">Report Generation</span>
-                    </div>
-                    <div style="margin-top: 1.5rem;">
-                        <a href="https://github.com/ayushjaiswal21/Future_DS_01" class="project-link" style="font-size: 1rem;">🔗 View Project on GitHub</a>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <h3>AI/ML Intern & Team Lead (Applied Computer Vision)</h3>
-                    <div class="company">UptoSkills</div>
-                    <div class="duration">Jan 2025 - Apr 2025 (4 Months)</div>
-                    <p>Spearheaded the development and optimization of an <strong>AI-powered proctoring system</strong> utilizing advanced Computer Vision techniques (OpenCV, Dlib) for real-time face recognition and anomaly detection during online assessments. Successfully <strong>mentored and guided a team of 30+ junior interns</strong> on best practices in ML development, code quality, and project management, ensuring timely delivery and high system reliability. My leadership directly contributed to the system's <strong>successful pilot deployment, reducing instances of malpractice by an estimated 50%</strong>.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">Dlib</span>
-                        <span class="tech-tag">Face Recognition (ML)</span>
-                        <span class="tech-tag">Team Leadership</span>
-                        <span class="tech-tag">Mentorship</span>
-                        <span class="tech-tag">Project Management</span>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <h3>Data Science Intern (Predictive Modeling)</h3>
-                    <div class="company">MyJobGrow</div>
-                    <div class="duration">Jan 2025 - Mar 2025 (3 Months)</div>
-                    <p>Developed and deployed multiple <strong>production-ready Machine Learning models</strong>, including a highly accurate predictive analytics model for wine quality (85% accuracy) and a robust sports forecasting model for IPL cricket (78% accuracy). This role significantly strengthened my expertise in <strong>end-to-end data science lifecycle management</strong>, from data acquisition and cleaning to model selection, hyperparameter tuning, and deployment considerations. My contributions directly enabled data-driven insights for business optimization and strategic planning.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">Predictive Modeling</span>
-                        <span class="tech-tag">Feature Engineering</span>
-                        <span class="tech-tag">Model Deployment Concepts</span>
-                    </div>
-                </div>
-            </div>
+        <div class="skill-group">
+          <div class="k">Cognitive &amp; Voice AI</div>
+          <div class="skill-chips">
+            <span>TTS/STT Pipelines</span><span>Voice Activity Detection</span><span>AI Guardrails</span><span>Model Fine-tuning</span>
+          </div>
         </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Let's Connect & Drive AI/ML Innovation</h2>
-            <div class="contact-content">
-                <p>I am actively seeking <strong>full-time AI/ML Engineer, Data Scientist, or Machine Learning Engineer positions</strong> where I can apply my proven expertise to architect, develop, and deploy innovative solutions that solve complex, real-world business challenges. Let's connect to discuss how my passion for data-driven innovation, strong track record of project delivery, and demonstrated leadership can significantly contribute to your organization's strategic AI objectives.</p>
-                <p class="open-to-work">🎯 <strong>Actively Seeking AI/ML & Data Science Opportunities</strong> - Ready to make an immediate, measurable impact!</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h4>📧 Professional Email</h4>
-                        <p>jaiswalayush2121@gmail.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>📱 Mobile Number</h4>
-                        <p>+91 7827376991</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>📍 Current Location</h4>
-                        <p>New Delhi, India</p>
-                    </div>
-                </div>
-                <div class="contact-links">
-                    <a href="mailto:jaiswalayush2121@gmail.com" class="contact-link">📧 Email Me</a>
-                    <a href="https://www.linkedin.com/in/ayushjaiswal-datadriven" class="contact-link">💼 Connect on LinkedIn</a>
-                    <a href="https://github.com/ayushjaiswal21" class="contact-link">💻 View GitHub Profile</a>
-                    <a href="https://shorturl.at/l4f2Q" class="contact-link resume-btn" target="_blank">📄 Download Resume</a>
-                </div>
-                
-                <div style="margin-top: 3.5rem; padding: 2.5rem; background: linear-gradient(45deg, #4b6cb7, #182848); border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
-                    <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.8rem;">🚀 Why I Am the Right Fit for Your AI/ML Team:</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
-                        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
-                            <strong style="color: #FFD700; font-size: 1.2rem;">💡 Innovation-Driven</strong>
-                            <p style="font-size: 1rem; margin-top: 0.6rem; color: #E0E0E0;">Constantly exploring and implementing cutting-edge AI/ML technologies and research.</p>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
-                            <strong style="color: #FFD700; font-size: 1.2rem;">🎯 Results-Focused</strong>
-                            <p style="font-size: 1rem; margin-top: 0.6rem; color: #E0E0E0;">Consistently delivered measurable impact and efficiency gains in every project and role.</p>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
-                            <strong style="color: #FFD700; font-size: 1.2rem;">📈 Leadership & Strategic Impact</strong>
-                            <p style="font-size: 1rem; margin-top: 0.6rem; color: #E0E0E0;">A leader committed to continuous learning, mentoring high-performing teams, and driving strategic AI initiatives that deliver measurable business value.</p>
-                        </div>
-                    </div>
-                    <p style="color: white; font-size: 1.2rem; margin-top: 2rem; font-style: italic; line-height: 1.7;">"My objective is to not just join a team, but to <strong>significantly elevate its AI/ML capabilities</strong> and contribute directly to market-leading innovations."</p>
-                </div>
-            </div>
+        <div class="skill-group">
+          <div class="k">GenAI &amp; Frameworks</div>
+          <div class="skill-chips">
+            <span>vLLM</span><span>Pipecat</span><span>Google Gemini API</span><span>Ollama</span><span>Transformers</span>
+          </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Ayush Jaiswal. All rights reserved.</p>
+        <div class="skill-group">
+          <div class="k">Cloud, DB &amp; Tools</div>
+          <div class="skill-chips">
+            <span>FastAPI</span><span>Flask</span><span>Render</span><span>Docker</span><span>PostgreSQL</span><span>Git</span>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script src="js/script.js"></script>
+  <section id="achievements">
+    <div class="container">
+      <div class="section-head">
+        <h2>Achievements</h2>
+        <p>Outside the day job — competition, open source, and teaching.</p>
+      </div>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <h3>Hackathons</h3>
+          <p>1st place in a college-level tech hackathon; competed in 8+ national-level events, including Manthan 2024.</p>
+        </div>
+        <div class="achievement-card">
+          <h3>Open Source — GSSOC</h3>
+          <p>Contributed to GirlScript Summer of Code, enhancing 5+ AI repositories and improving processing speed by 20%.</p>
+        </div>
+        <div class="achievement-card">
+          <h3>STEM Leadership</h3>
+          <p>Ullas Scholar; mentored 1,000+ students in digital literacy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="activity" class="github-activity">
+    <div class="container">
+      <div class="section-head">
+        <h2>Lately</h2>
+        <p>Live from GitHub — not a claim, a feed.</p>
+      </div>
+      <div class="github-row">
+        <img src="https://github-readme-stats.vercel.app/api?username=ayushjaiswal21&show_icons=true&hide_title=true&hide_border=true&bg_color=10151c&title_color=e8b339&text_color=96a1b2&icon_color=49c6d8" alt="Ayush Jaiswal's GitHub stats" loading="lazy">
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=ayushjaiswal21&hide_border=true&background=10151c&ring=e8b339&fire=e8b339&currStreakLabel=49c6d8&sideLabels=96a1b2&dates=5c6675" alt="Ayush Jaiswal's GitHub streak" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact</h2>
+      </div>
+      <p class="lede">
+        I'm actively looking for full-time AI Engineer and Voice AI roles.
+        If you're building something in this space, I'd like to hear about it.
+      </p>
+      <div class="contact-grid">
+        <a href="mailto:jaiswalayush2121@gmail.com">
+          <span class="k">Email</span>
+          <span class="v">jaiswalayush2121@gmail.com</span>
+        </a>
+        <a href="tel:+917827376991">
+          <span class="k">Phone</span>
+          <span class="v">+91 7827376991</span>
+        </a>
+        <div>
+          <span class="k">Location</span>
+          <span class="v">Noida, Uttar Pradesh, India</span>
+        </div>
+        <a href="https://www.linkedin.com/in/ayushjaiswal-datadriven" target="_blank">
+          <span class="k">LinkedIn</span>
+          <span class="v">ayushjaiswal-datadriven</span>
+        </a>
+        <a href="https://github.com/ayushjaiswal21" target="_blank">
+          <span class="k">GitHub</span>
+          <span class="v">ayushjaiswal21</span>
+        </a>
+        <a href="https://drive.google.com/file/d/10J5Uh1urs7maktzx00Pf9AQ_L4ACRxFr/view?usp=sharing" target="_blank">
+          <span class="k">Resume</span>
+          <span class="v">Download PDF</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <span>© 2026 Ayush Jaiswal</span>
+      <span>Built from scratch, by hand</span>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
